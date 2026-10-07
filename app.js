@@ -25,7 +25,7 @@ function displayEmployees(employees) {
                 <div class='card-info-container'>
                     <h3 id='name' class='card-name cap'>${fullName}</h3>
                     <p class='card-text'>${email}</p>
-                    <p class='card-text cap'>${location}></p>
+                    <p class='card-text cap'>${location}</p>
                 </div>
             </div>
         `
