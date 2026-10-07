@@ -10,6 +10,13 @@ async function getEmployees() {
     console.log(data)
 }
 
+cardGallery.addEventListener('click', (event) => {
+    if (event.target.classList.contains('card-name') || event.target.classList.contains('card-img')) {
+        console.log(event.target)
+    }
+})
+
+
 function displayEmployees(employees) {
     employees.forEach((employee) => {
         const fullName = `${employee.name.first} ${employee.name.last}`;
