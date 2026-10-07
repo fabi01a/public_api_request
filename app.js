@@ -4,7 +4,13 @@ async function getEmployees() {
 
     )
     const data = await response.json();
-    console.log(data)
+    displayEmployees(data.results)
+}
+
+function displayEmployees(employees) {
+    employees.forEach((employee) => {
+        console.log(employee)
+    })
 }
 
 getEmployees();
