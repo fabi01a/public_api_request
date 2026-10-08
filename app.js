@@ -83,4 +83,5 @@ function displayEmployees(employees) {
     cardGallery.innerHTML = employeeHTML;
 }
 
+
 getEmployees();
