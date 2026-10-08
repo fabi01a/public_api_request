@@ -11,32 +11,39 @@ async function getEmployees() {
 }
 
 cardGallery.addEventListener('click', (event) => {
-    if (event.target.classList.contains('card-name') || event.target.classList.contains('card-img')) {
-        console.log(event.target)
+    if (
+        event.target.classList.contains('card-name') || 
+        event.target.classList.contains('card-img')
+    ) {
+        console.log(event.target.parentNode.parentNode.dataset.index);
+        // console.log(event.target)
     }
 })
 
 
 function displayEmployees(employees) {
-    employees.forEach((employee) => {
+    let employeeHTML = '';
+
+    employees.forEach((employee, index) => {
         const fullName = `${employee.name.first} ${employee.name.last}`;
         const thumbnail = employee.picture.thumbnail;
         const email = employee.email;
         const location = `${employee.location.city}, ${employee.location.state}`;
         
-        cardGallery.innerHTML += `
-            <div class='card'>
+        employeeHTML += `
+            <div class='card' data-index='${index}'>
                 <div class='card-img-container'>
-                    <img class='card-img' src=${thumbnail} alt="profile picture"></img>
+                    <img class='card-img' src='${thumbnail}' alt="profile picture"></img>
                 </div>
                 <div class='card-info-container'>
-                    <h3 id='name' class='card-name cap'>${fullName}</h3>
-                    <p class='card-text'>${email}</p>
-                    <p class='card-text cap'>${location}</p>
+                    <h3 id='name' class='card-name cap'>'${fullName}'</h3>
+                    <p class='card-text'>'${email}'</p>
+                    <p class='card-text cap'>'${location}'</p>
                 </div>
             </div>
         `
-    })
+    });
+    cardGallery.innerHTML = employeeHTML;
 }
 
 getEmployees();
