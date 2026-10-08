@@ -6,11 +6,10 @@ async function getEmployees() {
     const response = await fetch(
         'https://randomuser.me/api/?results=12'
 
-    )
+    );
     const data = await response.json();
-    displayEmployees(data.results)
     employeeData = data.results;
-    console.log(employeeData)
+    displayEmployees(data.results);
 }
 
 cardGallery.addEventListener('click', (event) => {
@@ -25,6 +24,12 @@ cardGallery.addEventListener('click', (event) => {
 })
 
 function displayModal(employee) {
+    const birthday = new Date(employee.dob.date);
+    const month = birthday.getMonth() +1;
+    const day = birthday.getDate();
+    const year = birthday.getFullYear();
+    const formattedBirthday = `${month}/${day}/${year}`;
+    
     const modalHTML = `
         <div class="modal-container">
                 <div class="modal">
@@ -39,7 +44,7 @@ function displayModal(employee) {
                         <p class="modal-text">
                             ${employee.location.street.number} ${employee.location.street.name}, ${employee.location.city}, ${employee.location.state} ${employee.location.postcode}
                         </p>
-                        <p class="modal-text">${employee.dob.date}</p>
+                        <p class="modal-text">Birthday: ${formattedBirthday}</p>
                     </div>
                 </div>
 
@@ -63,9 +68,9 @@ function displayEmployees(employees) {
         const location = `${employee.location.city}, ${employee.location.state}`;
         
         employeeHTML += `
-            <div class='card' data-index=${index}>
+            <div class='card' data-index="${index}">
                 <div class='card-img-container'>
-                    <img class='card-img' src=${thumbnail} alt="profile picture"></img>
+                    <img class='card-img' src=${thumbnail} alt="profile picture">
                 </div>
                 <div class='card-info-container'>
                     <h3 id='name' class='card-name cap'>${fullName}</h3>
