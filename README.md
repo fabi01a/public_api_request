@@ -23,6 +23,5 @@ This project strengthened my understanding of working with public APIs and async
 ## Video Demo
 
 
-https://github.com/user-attachments/assets/e5b95f34-f4ed-44c2-b4da-0d04d279ec59
 
 This demo showcases the employee directory, dynamically generating employee profiles, and interactive modal window displaying additional contact information.
