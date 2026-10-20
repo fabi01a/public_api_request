@@ -1,3 +1,5 @@
+
+
 # Project Overview
 Awesome Startup is a fictional company with remote employees located around the world. This project is an interactive employee directory designed to make it easy for employees to find and access one another's contact information.
 
@@ -21,6 +23,10 @@ This project strengthened my understanding of working with public APIs and async
 - Implementing interactive modal windows using DOM manipulation and event listeners
 
 ## Video Demo
+
+
+
+https://github.com/user-attachments/assets/7ba8b076-7232-4b98-a39c-485542d6b0e1
 
 
 
